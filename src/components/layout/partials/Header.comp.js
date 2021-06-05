@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Navbar, Nav} from "react-bootstrap"
-// import { logOut } from "../../../pages/login/loginAction";
+import { logOut } from "../../../pages/login/loginAction";
 import { LinkContainer } from "react-router-bootstrap"
 import '../defaultLayout.style.css'
 import { Link, useHistory } from "react-router-dom";
@@ -11,20 +11,21 @@ import { useDispatch, useSelector } from "react-redux";
 // export const Header = () => {
 
   export const Header = () => {
-    // const dispatch = useDispatch();
-    // const history = useHistory();
+    const dispatch = useDispatch();
+    const history = useHistory();
   
-    // const { adminProfile } = useSelector(state => state.profile);
+    const { adminProfile } = useSelector(state => state.profile);
   
-    // const handleOnLogout = () => {
-    //   console.log("logging out./..");
+    const handleOnLogout = () => {
+      console.log("logging out./..");
   
-    //   dispatch(logOut(adminProfile?._id));
-    //   history.push("/");
-    // }
+      dispatch(logOut(adminProfile?._id));
+      history.push("/");
+    }
 
 
     return (
+      
         <Navbar collapseOnSelect bg="info" variant="dark" expand="md" className="color-nav">
 
         <Navbar.Brand>
@@ -34,22 +35,20 @@ import { useDispatch, useSelector } from "react-redux";
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
 
-          {/* <LinkContainer to="/dashboard">
-              <Nav.Link>DASHBOARD</Nav.Link>
-            </LinkContainer> */}
-
-            <LinkContainer to="/">
+            <LinkContainer to="/shift">
               <Nav.Link>SHIFTS</Nav.Link>
             </LinkContainer>
 
-            {/* <LinkContainer to="/employee">
-              <Nav.Link>EMPLOYEE</Nav.Link>
-              </LinkContainer>
-    
-            <Nav.Link onClick={handleOnLogout} style={{ cursor: "pointer" }}>LOGOUT</Nav.Link> */}
+            <LinkContainer to="/availability">
+              <Nav.Link> REQUEST SHIFTS</Nav.Link>
+            </LinkContainer>
+
+            <Nav.Link onClick={handleOnLogout} style={{ cursor: "pointer" }}>LOGOUT</Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
 
      
     )

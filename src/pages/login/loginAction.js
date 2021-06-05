@@ -7,10 +7,10 @@ import {
 	passwordRestOTPRequest,
 } from "./loginSlice";
 
-// import { getProfileSuccess } from "../profile/profileSlice";
-import { adminLogoutAPI } from "../../apis/profileAPI";
-import { loginAPI } from "../../apis/loginAPI";
-import { tokenAPI } from "../../apis/tokenAPI";
+import { getProfileSuccess } from "../profile/profileSlice";
+import { adminLogoutAPI } from "../../components/apis/profileAPI";
+import { loginAPI } from "../../components/apis/loginAPI";
+import { tokenAPI } from "../../components/apis/tokenAPI";
 
 export const sendLogin = formData => async dispatch => {
 	try {

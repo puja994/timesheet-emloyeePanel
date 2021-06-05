@@ -22,7 +22,7 @@ export const LoginForm = () => {
 	const [login, setLogin] = useState(initialState);
 
 	
-	let { from } = location.state || { from: { pathname: "/dashboard" } };
+	let { from } = location.state || { from: { pathname: "/shift" } };
 
 	useEffect(() => {
 
@@ -97,9 +97,9 @@ export const LoginForm = () => {
 					</Button>
 				</Form>
 
-				<a href="/reset-password" className="text-right">
+				{/* <a href="/reset-password" className="text-right">
 					Forgot Password ?
-				</a>
+				</a> */}
 			</Card>
 		</div>
 	);

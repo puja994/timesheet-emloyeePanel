@@ -2,6 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import shiftsReducer from "./pages/calenderSlice"
 import loginReducer from './pages/login/loginSlice'
+import profileReducer from './pages/profile/profileSlice'
+import availabilityReducer from './pages/availability/availabilitySlice'
 
 
 const store = configureStore({
@@ -9,6 +11,8 @@ const store = configureStore({
 		
 		shifts: shiftsReducer,
 		login: loginReducer,
+		profile: profileReducer,
+		availability: availabilityReducer,
 	
 	},
 });

@@ -1,8 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Calender } from './pages/Calender.js';
  import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
  import Login from './pages/login/Login'
+import { Availability } from './pages/availability/Availability';
 
 function App() {
   return (
@@ -10,13 +11,22 @@ function App() {
         <Router>
        <Switch>
          
-    <Route exact path="/">
+    <Route exact path="/shift">
           <Calender />
         </Route>
 
-        <Route exact path="/login">
+    <Route exact path="/">
           <Login/>
         </Route>
+
+        <Route exact path="/availability">
+          <Availability/>
+        </Route>
+
+        <Route path="*">
+						<h1>404 Page not found</h1>
+					</Route>
+
         
         </Switch>
         </Router>
