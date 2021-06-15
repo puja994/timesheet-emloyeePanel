@@ -92,11 +92,11 @@ export const LoginForm = () => {
 						/>
 					</Form.Group>
 
-					<Button variant="primary" type="submit">
+					<Button variant="primary" type="submit" className="btn"> 
 						Submit
 					</Button>
 				</Form>
-
+				<a href="http://localhost:3001/">Manager Login</a>
 				{/* <a href="/reset-password" className="text-right">
 					Forgot Password ?
 				</a> */}

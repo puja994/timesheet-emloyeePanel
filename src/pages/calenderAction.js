@@ -1,8 +1,8 @@
 import { requestPending,
     addShiftSuccess, fetchShiftSuccess, deleteShiftSuccess,
-    requestFail} from './calenderSlice'
+    requestFail,selectedShiftSucess} from './calenderSlice'
 
-import { getShifts} from '../components/apis/shiftAPI'
+import { getShifts, getAShift, } from '../components/apis/shiftAPI'
 
 // export const addNewShift = frmDt => async dispatch => {
 //     try{
@@ -60,3 +60,19 @@ export const fetchShifts = () => async dispatch => {
 // 	}
 // };
 
+export const fetchSelectedShift = (_id) => async (dispatch) => {
+    try {
+      dispatch(requestPending());
+  
+      const result = await getAShift(_id)
+      dispatch(selectedShiftSucess(result));
+    } catch (error) {
+      console.log(error);
+      const err = {
+        status: "error",
+        message: error.message,
+      };
+  
+      dispatch(requestFail(err));
+    }
+  };

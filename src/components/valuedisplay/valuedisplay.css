@@ -1,0 +1,25 @@
+li{
+    list-style-type: none;
+}
+li:hover {
+	background: skyblue;
+    cursor: pointer;
+}
+ul{
+    background: #7CFC00;
+    border-radius: 5px;
+}
+tr, td{
+    border: 1px solid skyblue;
+}
+table{
+    border-collapse: collapse;
+    background: white;
+    color: black;
+}
+
+body{
+    font-family: Tahoma;
+}
+
+

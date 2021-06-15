@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Col, Form, InputGroup, Button, Jumbotron, Alert} from 'react-bootstrap'
+import {Col, Form, InputGroup, Button, Jumbotron, Alert, Row, Container} from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux"
 import {fetchAvailability, addNewAvailability,deleteAvailability} from '../../pages/availability/availabilityAction'
 import {Spinner} from 'react-bootstrap'
@@ -39,7 +39,9 @@ export const RequestShift = () => {
     return (
         <div>
                     <h2 variant= "info"style={{color:"black",textAlign:"center"}}>Provide your availability here</h2>
-       <Jumbotron>
+                   
+      <Jumbotron>
+        
 
        {isLoading && <Spinner variant="primary" animation="border" />}
 
@@ -51,14 +53,19 @@ export const RequestShift = () => {
           
            <Form onSubmit= {handleOnSubmit}>
            <Form.Group as={Col} controlId="formGridState">
-           <Form.Label>Enter your Name:</Form.Label>
-           <input
-            type="name"
-            name="name"
-            value={availability.name}
-            onChange={handleOnChange}
+         
 
-            ></input>
+    <Form.Label>Name</Form.Label>
+    <Form.Control type="name" 
+    placeholder="Enter your Name" 
+    name="name"
+    value={availability.name}
+    onChange={handleOnChange}
+    required
+    />
+    
+     
+
 
      <Form.Group as={Col} controlId = "formGridState">
       <Form.Label>Shift Date</Form.Label>
@@ -99,9 +106,11 @@ export const RequestShift = () => {
 
            </Form.Group>
            </Form>
+           
           
            </Jumbotron>
-       
+           
+          
            </div>
     )
 }

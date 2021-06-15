@@ -5,6 +5,7 @@ const initialState = {
     shiftResponse: {},
     deleteMsg: "",
     shiftsList: [],
+    selectedShiftList: {},
     
 }
 
@@ -22,9 +23,14 @@ const shiftsSlice = createSlice({
         fetchShiftSuccess: (state, {payload}) => {
             state.isLoading = false
             state.shiftsList = payload.result || []
-            console.log(payload)
+            
             
         },
+        selectedShiftSucess: (state, { payload }) => {
+    
+            state.isLoading = false;
+            state.selectedShiftList = payload.result;
+          },
         // deleteShiftSuccess: (state, { payload }) => {
 		// 	state.isLoading = false;
 		// 	// state.status = payload.status;
@@ -45,6 +51,7 @@ export const {
     addShiftSuccess,
     fetchShiftSuccess,
     deleteShiftSuccess,
+    selectedShiftSucess,
     requestFail
 } = actions
 

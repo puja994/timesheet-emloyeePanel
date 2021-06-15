@@ -23,3 +23,15 @@ export const getShifts = ()=> {
     })
 }
 
+export const getAShift = _id => {
+	return new Promise(async (resolve, reject) => {
+		try {
+			const { data } = await axios.get(shiftApi + _id);
+
+			resolve(data);
+		} catch (error) {
+			reject(error);
+		}
+	});
+};
+
