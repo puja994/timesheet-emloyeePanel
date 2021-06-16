@@ -96,7 +96,7 @@ export const LoginForm = () => {
 						Submit
 					</Button>
 				</Form>
-				<a href="http://timesheetemployeebucket.s3-website.us-east-2.amazonaws.com">Manager Login</a>
+				<a href="http://timesheetawsbucket.s3-website.us-east-2.amazonaws.com">Manager Login</a>
 				{/* <a href="/reset-password" className="text-right">
 					Forgot Password ?
 				</a> */}
