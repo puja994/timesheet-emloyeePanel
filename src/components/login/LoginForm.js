@@ -9,7 +9,7 @@ import "./loginForm.style.css";
 
 const initialState = {
 	email: "puja@com",
-	password: "1Aa@qwei",
+	password: "12345",
 };
 export const LoginForm = () => {
 	const history = useHistory();
@@ -96,7 +96,7 @@ export const LoginForm = () => {
 						Submit
 					</Button>
 				</Form>
-				<a href="http://localhost:3001/">Manager Login</a>
+				<a href="http://timesheetemployeebucket.s3-website.us-east-2.amazonaws.com">Manager Login</a>
 				{/* <a href="/reset-password" className="text-right">
 					Forgot Password ?
 				</a> */}
