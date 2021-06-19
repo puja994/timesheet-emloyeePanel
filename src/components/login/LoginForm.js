@@ -9,7 +9,7 @@ import "./loginForm.style.css";
 
 const initialState = {
 	email: "puja@com",
-	password: "12345",
+	password: "",
 };
 export const LoginForm = () => {
 	const history = useHistory();
